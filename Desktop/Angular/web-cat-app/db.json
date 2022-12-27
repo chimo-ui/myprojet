@@ -1,0 +1,31 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "DELL",
+      "price": 43000,
+      "quantity": 100,
+      "selected": true,
+      "available": true,
+      "img": "assets/img/error.jpg"
+    },
+    {
+      "id": 2,
+      "name": "HP",
+      "price": 4000,
+      "quantity": 80,
+      "selected": true,
+      "available": true,
+      "img": "assets/img/error.jpg"
+    },
+    {
+      "id": 3,
+      "name": "MAC",
+      "price": 4800,
+      "quantity": 80,
+      "selected": false,
+      "available": true,
+      "img": "assets/img/error.jpg"
+    }
+  ]
+}

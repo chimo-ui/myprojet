@@ -1,0 +1,19 @@
+
+
+<mat-card>
+
+
+<mat-card-content>
+       
+  <app-products-nav-bar (ProductEmitter)="OnActionEvent($event)"></app-products-nav-bar>     
+<!-- Button trigger modal-->
+
+<!-- Modal-->
+
+
+
+
+
+  <app-products-list [productsInput$]="products$" (ProductEmitter)="OnActionEvent($event)"> </app-products-list>
+  
+

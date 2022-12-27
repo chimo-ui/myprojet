@@ -1,0 +1,28 @@
+<tr *ngIf="product">
+
+    <th scope="row">{{product.id}}</th>
+    <td>{{product.name}}</td>
+    <td>{{product.quantity}}</td>
+    <td>{{product.price}}</td>
+    <td>{{product.selected}}</td>
+    <td>{{product.available}}</td>
+    <td>
+        
+    <button type="button" (click)="onSelect(product)"
+    [ngClass]="product.selected?'btn btn-success btn-sm':'btn btn-danger btn-sm'">
+        <span *ngIf="product.selected"> Selected </span>
+        <span *ngIf="!product.selected"> Unselected </span>
+    </button>
+
+    </td>
+    <td>
+      <button (click)="onEdit(product)" class="btn btn-info btn-sm me-3" data-bs-toggle="modal" data-bs-target="#kt_modal_invite_friends">
+        Edit
+      </button>
+      
+      <button class="btn btn-danger btn-sm" (click)="onDelete(product)">
+        Delete 
+      </button>
+      
+    </td>
+  </tr>

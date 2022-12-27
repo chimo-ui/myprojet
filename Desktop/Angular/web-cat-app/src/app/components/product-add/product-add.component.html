@@ -1,0 +1,235 @@
+<style>
+    .bg-danger {
+    --bs-bg-opacity: 1;
+    background-color: #3e666d !important;
+} 
+  
+</style>
+<mat-card>
+<mat-card-content>
+  <div class="app-container container-xxl">
+    <!--begin::Main-->
+    <div *ngIf="productformGroup"  class="app-main flex-column flex-row-fluid" id="kt_app_main">
+      <!--begin::Content wrapper-->
+      <div class="d-flex flex-column flex-column-fluid">
+        <!--begin::Content-->
+       
+        <div id="kt_app_content" class="app-content">
+          <!--begin::Form-->
+          <form [formGroup]="productformGroup" id="kt_ecommerce_add_product_form" class="form d-flex flex-column flex-lg-row fv-plugins-bootstrap5 fv-plugins-framework">
+            <!--begin::Aside column-->
+            <div class="d-flex flex-column gap-7 gap-lg-10 w-100 w-lg-300px mb-7 me-lg-10">
+              <!--begin::Thumbnail settings-->
+              <div class="card card-flush py-4">
+                <!--begin::Card header-->
+                <div class="card-header">
+                  <!--begin::Card title-->
+                  <div class="card-title">
+                    <h2> Image product </h2>
+                  </div>
+                  <!--end::Card title-->
+                </div>
+                <!--end::Card header-->
+                <!--begin::Card body-->
+                <div class="card-body text-center pt-0">
+                  <!--begin::Image input-->
+                  
+                  <!--begin::Image input placeholder-->
+                  <style>
+                  .image-input-placeholder 
+                  { 
+                  background-image: url('assets/img/blank-image.svg'); 
+                  } 
+                  [data-theme="dark"] 
+                  .image-input-placeholder 
+                  { 
+                  background-image: url('/metronic8/demo30/assets/media/svg/files/blank-image-dark.svg');
+                  }
+                  </style>
+                  <!--end::Image input placeholder-->
+                  <div class="image-input image-input-empty image-input-outline image-input-placeholder mb-3" data-kt-image-input="true">
+                    <!--begin::Preview existing avatar-->
+                    <div class="image-input-wrapper w-150px h-150px"></div>
+                    <!--end::Preview existing avatar-->
+                    <!--begin::Label-->
+                    <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="change" data-bs-toggle="tooltip" aria-label="Change avatar" data-bs-original-title="Change avatar" data-kt-initialized="1">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+                        <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+                      </svg>
+                      <!--begin::Inputs-->
+                      <input type="file" (change)="onImgChange($event)" name="avatar" formControlName="img"  accept=".png, .jpg, .jpeg">
+                      <input type="hidden" name="avatar_remove">
+                      <!--end::Inputs-->
+                    </label>
+                    <!--end::Label-->
+
+                    <!--begin::Cancel-->
+                    <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="cancel" data-bs-toggle="tooltip" aria-label="Cancel avatar" data-bs-original-title="Cancel avatar" data-kt-initialized="1">
+                      <i class="bi bi-x fs-2"></i>
+                    </span>
+                    <!--end::Cancel-->
+                    <!--begin::Remove-->
+                    <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="remove" data-bs-toggle="tooltip" aria-label="Remove avatar" data-bs-original-title="Remove avatar" data-kt-initialized="1">
+                      <i class="bi bi-x fs-2"></i>
+                    </span>
+                    <!--end::Remove-->
+                  </div>
+                  <!--end::Image input-->
+                  <!--begin::Description-->
+                  <div class="text-muted fs-7">Set the product thumbnail image. Only *.png, *.jpg and *.jpeg image files are accepted</div>
+                  <!--end::Description-->
+                </div>
+                <!--end::Card body-->
+              </div>
+              
+            </div>
+            <!--end::Aside column-->
+            <!--begin::Main column-->
+            <div class="d-flex flex-column flex-row-fluid gap-7 gap-lg-10">
+              <!--begin:::Tabs-->
+              <ul class="nav nav-custom nav-tabs nav-line-tabs nav-line-tabs-2x border-0 fs-4 fw-semibold mb-n2" role="tablist">
+                <!--begin:::Tab item-->
+                <li class="nav-item" role="presentation">
+                  <a class="nav-link text-active-primary pb-4 active" data-bs-toggle="tab" href="#kt_ecommerce_add_product_general" aria-selected="true" role="tab">General</a>
+                </li>
+                <!--end:::Tab item-->
+                
+                <!--begin:::Tab item-->
+                
+                <!--end:::Tab item-->
+              </ul>
+              <!--end:::Tabs-->
+              <!--begin::Tab content-->
+              <div class="tab-content">
+                <!--begin::Tab pane-->
+                <div class="tab-pane fade active show" id="kt_ecommerce_add_product_general" role="tab-panel">
+                  <div class="d-flex flex-column gap-7 gap-lg-10">
+                    <!--begin::General options-->
+                    <div class="card card-flush py-4">
+                      <!--begin::Card header-->
+                      <div class="card-header">
+                        <div class="card-title">
+                          <h2>Add product</h2>
+                        </div>
+                      </div>
+                      <!--end::Card header-->
+                      <!--begin::Card body-->
+                      <div class="card-body pt-0">
+                        <!--begin::Input group-->
+                        <div class="mb-10 fv-row fv-plugins-icon-container">
+                          <!--begin::Label-->
+                          <label class="required form-label">Product Name</label>
+                          <!--end::Label-->
+                          <!--begin::Input-->
+                          <input type="text" name="product_name" class="form-control mb-2" placeholder="Product name" value="" formControlName="name"
+                          [ngClass]="{'is-invalid' : submitted && productformGroup.controls.name.errors}">
+                          <div *ngIf = "submitted && productformGroup.controls.name.errors" class="invalid-feedback">
+                          <div *ngIf = "productformGroup.controls.name.errors.required">
+                            Name is Required
+                          </div>
+                          </div>
+                          <!--end::Input-->
+                          <!--begin::Description-->
+                          <div class="d-flex gap-3">
+                            <div class="mb-10 fv-row fv-plugins-icon-container">
+                            <label class="required form-label"> Quantity </label>
+                            <input type="number" name="shelf" class="form-control" placeholder="Quantity" value="" formControlName="quantity">
+                            
+                            </div>
+                           
+                            <div class="mb-10 fv-row fv-plugins-icon-container">
+                            <label class="required form-label"> Price </label>
+                            <input type="number" name="warehouse" class="form-control" placeholder="Price" formControlName="price">
+                            <div *ngIf = "submitted && productformGroup.controls.price.errors" class="invalid-feedback">
+                              <div *ngIf = "productformGroup.controls.price.errors.required">
+                                Price is Required
+                              </div>
+                            </div>
+                          </div>
+                          </div>
+                          <div class="fv-row">
+                            <div class="mb-10 fv-row fv-plugins-icon-container">
+                            <div class="form-check form-check-custom form-check-solid mb-2">
+                              <input class="form-check-input" type="checkbox" value="" formControlName="selected">
+                              <label class="form-check-label"> Selected </label>
+                            </div>
+                            </div>
+                            
+                          </div>
+                          <div class="fv-row">
+                            <div class="mb-10 fv-row fv-plugins-icon-container">
+                            <div class="form-check form-check-custom form-check-solid mb-2">
+                              <input class="form-check-input" type="checkbox" value="" formControlName="available">
+                              <label class="form-check-label"> Availaible </label>
+                            </div>
+                            </div>
+                            
+                          </div>
+                          
+                        
+                         
+                      </div>
+                        
+                      </div>
+                      <!--end::Card header-->
+                      
+
+                    </div>
+                    <!--end::General options-->
+                    
+                  </div>
+                </div>
+                <!--end::Tab pane-->
+                <!--begin::Tab pane-->
+                
+                <!--end::Tab pane-->
+              </div>
+              <!--end::Tab content-->
+              <div class="d-flex justify-content-end">
+                <!--begin::Button-->
+                <a href="/metronic8/demo30/../demo30/apps/ecommerce/catalog/products.html" id="kt_ecommerce_add_product_cancel" class="btn btn-light me-5">Cancel</a>
+                <!--end::Button-->
+                <!--begin::Button-->
+                <button (click)="onSaveProduct()" type="submit" id="kt_ecommerce_add_product_submit" class="btn btn-primary">
+                  <span class="indicator-label">Save Changes</span>
+                  <span class="indicator-progress">Please wait... 
+                  <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                </button>
+                <!--end::Button-->
+              </div>
+            </div>
+            <!--end::Main column-->
+          </form>
+          <!--end::Form-->
+        </div>
+        <!--end::Content-->
+      </div>
+      <!--end::Content wrapper-->
+      <!--begin::Footer-->
+      <div id="kt_app_footer" class="app-footer d-flex flex-column flex-md-row align-items-center flex-center flex-md-stack py-2 py-lg-4">
+        <!--begin::Copyright-->
+        <div class="text-dark order-2 order-md-1">
+          <span class="text-muted fw-semibold me-1">2022©</span>
+          <a href="https://keenthemes.com" target="_blank" class="text-gray-800 text-hover-primary">Keenthemes</a>
+        </div>
+        <!--end::Copyright-->
+        <!--begin::Menu-->
+        <ul class="menu menu-gray-600 menu-hover-primary fw-semibold order-1">
+          <li class="menu-item">
+            <a href="https://keenthemes.com" target="_blank" class="menu-link px-2">About</a>
+          </li>
+          <li class="menu-item">
+            <a href="https://devs.keenthemes.com" target="_blank" class="menu-link px-2">Support</a>
+          </li>
+          <li class="menu-item">
+            <a href="https://1.envato.market/EA4JP" target="_blank" class="menu-link px-2">Purchase</a>
+          </li>
+        </ul>
+        <!--end::Menu-->
+      </div>
+      <!--end::Footer-->
+    </div>
+    <!--end:::Main-->
+  </div>
+</mat-card-content>
+ </mat-card>
